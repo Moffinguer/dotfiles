@@ -1,2 +1,2 @@
 # Dotfiles
-Aquí iré rellenando configuración referente a mis Dotfiles y extras
+Aquí iré rellenando configuración referente a mis Dotfiles y extras a
