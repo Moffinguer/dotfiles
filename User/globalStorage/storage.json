@@ -1,0 +1,40 @@
+{
+    "telemetry.machineId": "12deee3fb0bc3adbfd80b1c6257dea70d49733679e089b9a4e7c6304a92dd3c4",
+    "theme": "vs-dark",
+    "themeBackground": "#272822",
+    "windowSplash": {
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#272822",
+            "editorBackground": "#272822",
+            "titleBarBackground": "#1e1f1c",
+            "activityBarBackground": "#272822",
+            "sideBarBackground": "#1e1f1c",
+            "statusBarBackground": "#414339",
+            "statusBarNoFolderBackground": "#414339"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 30,
+            "activityBarWidth": 256,
+            "sideBarWidth": 256,
+            "statusBarHeight": 20,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "backupPath": "C:\\Users\\ferma\\AppData\\Roaming\\Code\\Backups\\1654858836071",
+            "uiState": {
+                "mode": 0,
+                "x": 171,
+                "y": 0,
+                "width": 1024,
+                "height": 768
+            }
+        },
+        "openedWindows": []
+    }
+}
