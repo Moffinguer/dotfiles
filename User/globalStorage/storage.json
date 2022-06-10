@@ -26,12 +26,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "C:\\Users\\ferma\\AppData\\Roaming\\Code\\Backups\\1654858836071",
+            "folder": "file:///c%3A/Users/ferma/Desktop/Dotfiles",
+            "backupPath": "C:\\Users\\ferma\\AppData\\Roaming\\Code\\Backups\\813467cb08da01c56f9bd109a07ffdb7",
             "uiState": {
-                "mode": 0,
-                "x": 171,
+                "mode": 1,
+                "x": 683,
                 "y": 0,
-                "width": 1024,
+                "width": 683,
                 "height": 768
             }
         },

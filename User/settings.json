@@ -282,5 +282,6 @@
     "customizeUI.titleBar": "frameless",
     "terminal.explorerKind": "external",
     "customizeUI.statusBarPosition": "bottom",
+    "customizeUI.activityBarHideSettings": true,
     "customizeUI.activityBar": "top"
 }
