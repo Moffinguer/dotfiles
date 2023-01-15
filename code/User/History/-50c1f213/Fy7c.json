@@ -1,0 +1,286 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.accessibilitySupport": "off",
+    "editor.autoIndent": "advanced",
+    "editor.codeActionsOnSave": {},
+    "editor.codeLensFontFamily": "JetBrainsMonoExtraBold Nerd Font",
+    "editor.foldingStrategy": "indentation",
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.inlineHints.fontSize": 11,
+    "editor.linkedEditing": true,
+    "editor.mouseWheelZoom": true,
+    "editor.renderLineHighlightOnlyWhenFocus": true,
+    "editor.rulers": [],
+    "editor.semanticTokenColorCustomizations": {},
+    "workbench.settings.useSplitJSON": true,
+    "C_Cpp.addNodeAddonIncludePaths": true,
+    "C_Cpp.vcFormat.indent.caseLabels": true,
+    "C_Cpp.vcFormat.indent.caseContentsWhenBlock": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.fontLigatures": true,
+    "editor.lineNumbers": "relative",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "[latex]": {
+        "editor.formatOnPaste": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "editor.tabSize": 8,
+    "latex-workshop.bibtex-format.tab": "8",
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "editor.formatOnType": true,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 120,
+    "latex-workshop.progress.runIconType": "Solid Circled",
+    "latex-workshop.latex.watch.usePolling": true,
+    "latex-workshop.latex.autoBuild.interval": 1000,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.watch.delay": 120,
+    "latex-workshop.latex.pdfWatch.delay": 250,
+    "latex-workshop.view.pdf.backgroundColor": "#2d3436",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": [
+                "jnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ],
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "shell-escape",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2texmintex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "editor.fontSize": 12,
+    "editor.codeLensFontSize": 9,
+    "editor.fontWeight": 600,
+    "editor.renderWhitespace": "boundary",
+    "terminal.integrated.tabs.enabled": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "codesnap.backgroundColor": "#2d3436",
+    "codesnap.containerPadding": "1em",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.colorTheme": "Monokai",
+    "helium-icon-theme.folders.theme": "specific",
+    "helium-icon-theme.folders.color": "#34495e",
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook",
+        "git-rebase-todo": "default"
+    },
+    "git.confirmSync": false,
+    "theme-by-language.themes": {
+        "javascript": "lucy-evening",
+        "java": "french-rose-theme",
+        "json": "Default Dark+",
+        "jsonc": "Visual Studio Dark"
+    },
+    "eslint.codeActionsOnSave.mode": "problems",
+    "prettier.trailingComma": "none",
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "telemetry.telemetryLevel": "off",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorStyle": "line-thin",
+    "editor.cursorWidth": 5,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSurroundingLines": 1,
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "diffEditor.codeLens": true,
+    "diffEditor.maxComputationTime": 0,
+    "diffEditor.maxFileSize": 0,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.maxColumn": 100,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "files.associations": {},
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "afterDelay",
+    "files.defaultLanguage": "Python",
+    "workbench.activityBar.iconClickBehavior": "focus",
+    "workbench.colorCustomizations": {},
+    "workbench.preferredHighContrastColorTheme": "Default Dark+",
+    "workbench.preferredHighContrastLightColorTheme": "Default Light+",
+    "workbench.iconTheme": "helium-icon-theme",
+    "files.simpleDialog.enable": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.editor.autoLockGroups": {
+        "default": true,
+        "workbench.input.interactive": true,
+        "workbench.editorinputs.searchEditorInput": true,
+        "imagePreview.previewEditor": true,
+        "latex-workshop-pdf-hook": true
+    },
+    "problems.sortOrder": "position",
+    "notebook.outline.showCodeCells": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.defaultDateFormat": null,
+    "customizeUI.fontSizeMap": {
+        "13px": "13px",
+        "monospace": "12px"
+    },
+    "customizeUI.listRowHeight": 22,
+    "customizeUI.activityBarHideSettings": true,
+    "terminal.external.windowsExec": "C:\\Program Files\\Git\\git-bash.exe",
+    "customizeUI.titleBar": "frameless",
+    "terminal.explorerKind": "external",
+    "customizeUI.statusBarPosition": "bottom"
+}
