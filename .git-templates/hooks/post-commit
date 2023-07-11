@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Get the commit message
+commit_message=$(git log -1 HEAD --pretty=format:%s)
+commit_message="$commit_message\n"
+
+
+# Get the modified files in the most recent commit
+#for file in "$(git diff --name-status HEAD~1)"; do
+#	translated_status=$(echo "$file" | cut -f1 -d' ' )
+#	name=$( echo "$file" | cut -f2 -d' ' )
+#	case "$type" in
+#		*"M"*) translated_status="modified";;
+#		*"A"*) translated_status="added";;
+#		*"D"*) translated_status="deleted";;
+#		*"R"*) translated_status="renamed";;
+#		*"C"*) translated_status="copied";;
+#		*"U*") translated_status="updated but unmerged";;
+#		*) translated_status="unknown";;
+#	esac
+#	#commit_message="$commit_message\n\t$translated_status: $name"
+#done
+
+# Update the commit message with the modified file names
+#timeout 1s git commit --amend -m "$commit_message" --no-edit --quiet
+
+exit 1

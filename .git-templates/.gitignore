@@ -1,0 +1,30 @@
+## Ignore all Files by default, except gitignore
+*
+### Remove this line
+!*
+###
+!.gitignore
+
+## Ignore Folders ( Alphabetically )
+target/
+
+## Ignore content of Folders ( Alphabetically )
+# Empty By default
+
+## Ignore Content Of Folder By Regex ( Alphabetically )
+# Empty By Default
+
+## Exception Complete Folders ( Alphabetically )
+# Empty By default
+
+## Exception Folder By Regex
+# Empty By Default
+
+## Exception Files inside Folder ( From Root to Inside )
+# Empty By default
+
+## Exception Files ( Root Folder )
+!README.md
+
+## Exception Files By Regex
+# Empty By default

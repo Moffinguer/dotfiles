@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+errors=0
+
+localtime=$(date '+%Y%m%d%H%M%S')
+
+### analyce all commited files
+for file in $(git diff --cached --name-only --diff-filter=d); do
+	case $(file -bi $file)$file in
+		*"perl"*|*.pl|*.pm)
+			## create log file
+			if [[ ! -d "./target/perl" ]]
+			then
+				mkdir -p "./target/perl"
+			fi
+			if [[ ! -f "./target/perl/perl-hook$localtime.log" ]] 
+			then
+				touch "./target/perl/perl-hook$localtime.log"
+			fi
+
+			### format and analyce files
+			perltidy --pro=./hook-config/perl/.perltidyrc "$file" >> "./target/perl/perl-hook$localtime.log" && mv "$file.tdy" "$file" && perlcritic --profile ./hook-config/perl/.perlcriticrc "$file" >> ./target/perl/perl-hook$localtime.log
+			if [ $? != 0 ]; then
+				echo ""
+				echo "################################################################################"
+				echo "$file did not pass PERLCRITIC configuration. Check log file"
+				echo "################################################################################" 
+				echo ""
+				errors=1
+				continue
+			fi
+
+			echo ""
+			echo "##################################"
+			echo "###$file had no errors"
+			echo "##################################"
+			echo ""
+			;;
+
+		*)
+			echo ""
+			echo ">>>> Skip file $file"
+			echo ""
+			;;
+	esac
+	git add "$file"
+done
+
+if [[ $errors ]]
+then
+
+	echo ""
+	echo "Check log files at ./target/*"
+	exit 1
+fi
+
+exit 0
