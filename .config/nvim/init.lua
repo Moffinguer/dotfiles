@@ -1,5 +1,0 @@
-vim.cmd( 'source $HOME/.config/nvim/vim-plug/plugins.vim' )
-require( 'settings.hotkeys' )
-require( 'settings.themes' )
-require( 'settings.treesitter' )
-require( 'settings.lsp' )
