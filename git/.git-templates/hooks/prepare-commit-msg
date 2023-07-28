@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+tmp="/tmp/commit_temp_message"
+cat "$COMMIT_MSG_FILE" >> "$tmp"
+
+## Remove unnecesarry content
+sed -i '/^# Please enter the commit message for your changes\|^# with \|^$/d' "$tmp"
+sed -i '/^# Changes to be committed:/d' "$tmp"
+sed -i '/On branch/d; n; /Changes not staged for commit:/q' "$tmp"
+sed -i '/Changes not staged for commit:/,$d' "$tmp"
+sed -i '1s/$/\n/' "$tmp"
+
+mv "$tmp" "$COMMIT_MSG_FILE" 
+
+exit 0 

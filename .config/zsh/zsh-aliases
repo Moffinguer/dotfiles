@@ -1,0 +1,27 @@
+# Colorize files
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+export LESS='-R --use-color -Dd+r$Du+b$'
+alias diff='diff --color=auto'
+alias ip='ip --color=auto'
+alias ls='lsd'
+alias tree='lsd --tree'
+
+# Vim and Vi
+alias vi="nvim"
+alias vim="nvim"
+alias view="nvim -MR"
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# easier to read disk
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+
+# BitTorrent
+alias torrenton="sudo systemctl start qbittorrent-nox@moffinguer.service"
+alias torrentoff="sudo systemctl stop qbittorrent-nox@moffinguer.service"

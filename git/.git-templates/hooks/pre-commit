@@ -1,0 +1,143 @@
+#!/usr/bin/env bash
+
+## If an error was found
+errors=0
+
+localtime=$(date '+%Y%m%d%H%M%S')
+modifiedfiles=($(git diff --cached --name-only --diff-filter=d))
+
+## Add file types, extensions or certain filenames to be ignored during the check
+exceptionfiles=(java python py perl/.perltidyrc  perl/.perltidy)
+logfile=""
+
+
+function print() # (message)
+{
+	local message=$1
+	length=${#message}
+
+	printf '%s\n' $(printf '#%.0s' $(seq 1 $((length+4))))
+	printf '# %s #\n' "$1"
+	printf '%s\n' $(printf '#%.0s' $(seq 1 $((length+4))))
+
+}
+
+
+function skip_files() # ($file, $file_type) => ($skip)
+{
+	for exception in "${exceptionfiles[@]}"; do
+		local matches_exception=$( echo "$2" | grep -i "$exception" )
+
+		if [[ $1 != $exception && ! $1 =~ \.$exception$ && -z $matches_exception ]]; then
+			continue
+		fi
+		echo ""
+		echo ">>>> Skip file $1"
+		echo ""
+		return 1
+	done
+	return 0
+}
+
+function perl_files() # ($file) => ()
+{
+	if [[ "$logfile" != "./target/perl/perl$localtime.log" ]]; then
+		if [[ -z $PERLTIDY || -z $PERLCRITIC ]]; then
+			print "Set PERLTIDY and PERLCRITIC as enviroment variables pointing to the config files"
+			exit 1
+		fi
+		## create log file
+		logfile="./target/perl"
+
+		if [[ ! -d "$logfile" ]]
+		then
+			mkdir -p "$logfile"
+		fi
+		logfile="$logfile"/perl"$localtime".log
+
+		if [[ ! -f "$logfile" ]]
+		then
+			touch "$logfile"
+		fi
+	fi
+
+	syntax_check=$( perl -cw $1 2>&1 )
+
+	echo "" >> "$logfile" && echo "$syntax_check" >> "$logfile"
+
+	if [[ $syntax_check != "$1 syntax OK" ]]; then
+		print "$1 had syntax errors. Check log file"
+		return 1
+	fi
+
+	### format
+	perltidy "$1" >> "$logfile"
+	if [[ $? != 0 ]]; then
+		print "$1 had errors on formatting. Check log file"
+		return 1
+	fi
+	mv "$1.tdy" "$1"
+
+	### linter
+	perlcritic "$1" >> $logfile
+	if [[ $? != 0 ]]; then
+		print "$1 did not pass PERLCRITIC configuration. Check log file"
+		return 1
+	fi
+
+	print "$1 had no errors"
+
+	return 0
+}
+
+### analyce all commited files
+for file in "${modifiedfiles[@]}"; do
+
+	## Get file type
+	file_type=$(file -bi $file)
+
+	## Check if file is skipeable
+	skip_files "$file" "$file_type"
+	if [[ $? != 0 ]]; then
+		continue
+	fi
+
+	print "Checking file $file"
+
+	case $file_type$file in
+		*.java|*"java"*)
+			print "$file had no errors"
+			;;
+
+		*"perl"*|*.pl|*.pm)
+			perl_files "$file"
+			;;
+		*"python"*|*.py)
+			print "$file had no errors"
+			;;
+		*)
+			print "$file had no errors"
+			continue
+			;;
+	esac
+
+	if [[ $? == 1 && $errors == 0 ]]; then
+		errors=1
+	fi
+
+	## Add to git stash
+	git add "$file"
+done
+
+if [[ $errors == 1 ]]; then
+
+	echo ""
+	echo "#################WARNINGS####################"
+	echo "#       Check log files at ./target/* 	  #"
+	echo "#############################################"
+	echo ""
+
+	exit 1
+fi
+
+exit 0

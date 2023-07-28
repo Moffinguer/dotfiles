@@ -1,0 +1,12 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetBrainsMonoNL Nerd Font Mono','FiraCode Nerd Font Mono'",
+    "editor.codeLensFontFamily": "'JetBrainsMonoNL Nerd Font Mono','FiraCode Nerd Font Mono'",
+    "editor.fontLigatures": true,
+    "editor.fontVariations": true, 
+    "editor.formatOnType": true,
+    "editor.mouseWheelZoom": true,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Monokai Pro",
+    "window.zoomLevel": -1
+}
