@@ -24,6 +24,6 @@
 !.config/Code/User/snippets
 !.config/Code/User/settings.json
 .vscode/*
-!.vscode/extensions/
-.vscode/extensions/*
-!.vscode/extensions/extensions.json
+!main/.vscode/extensions/
+main/.vscode/extensions/*
+!main/.vscode/extensions/extensions.json
