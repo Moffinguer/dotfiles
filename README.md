@@ -46,7 +46,8 @@ pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 |-|-|-| 
 | bspwm sxhdk polybar | qtile | Window manager |
 | rofi | None | Program selectors |
-| lsd | None | Improvement of |
+| lsd | None | Improvement of _ls_ |
+| duf | None | Improvement of _df_ |
 | xbindkeys | None | Shortcut manager |
 | feh | None | Images |
 | picom | None | Compositor |
