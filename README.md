@@ -48,6 +48,7 @@ pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 | rofi | None | Program selectors |
 | lsd | None | Improvement of _ls_ |
 | duf | None | Improvement of _df_ |
+| bat | None | Improvement of _cat_ |
 | xbindkeys | None | Shortcut manager |
 | feh | None | Images |
 | picom | None | Compositor |
@@ -67,6 +68,7 @@ This are programs that I use on a daily basis, like net browsers, terminal emula
 | xorg-xbacklight | None | Control light of the screen |
 | flameshot | None | Screenshots |
 | unzip | None | Compress/Decompress files |
+| man-db man-pages | None | Manuals |
 ## Program tasks
 I use Cron in order to create tasks that I want to run on certain periods
 ```
