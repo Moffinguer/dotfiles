@@ -69,6 +69,7 @@ This are programs that I use on a daily basis, like net browsers, terminal emula
 | flameshot | None | Screenshots |
 | unzip | None | Compress/Decompress files |
 | man-db man-pages | None | Manuals |
+| noto-fonts-cjk | None | Special fonts |
 ## Program tasks
 I use Cron in order to create tasks that I want to run on certain periods
 ```
