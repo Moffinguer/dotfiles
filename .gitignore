@@ -6,7 +6,12 @@
 .config/gtk-2.0
 .config/gtk-3.0/bookmarks
 .config/nvim/autoload
-.config/pulse
+!.config/pulse
+.config/pulse/*
+!.config/pulse/client.conf
+!.config/pulse/daemon.conf
+!.config/pulse/default.pa
+!.config/pulse/system.pa
 .config/qBittorrent*
 .config/Thunar
 .config/vlc
