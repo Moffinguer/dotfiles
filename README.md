@@ -37,13 +37,14 @@ nmcli connection modify eduroam 802-1x.eap "tls" wifi-sec.key-mgmt "wpa-eap" 802
 | xorg-server| Launch graphical interface |
 | pulseaudio | Sound |
 | xorg-xinit | Script for graphical interface |
+| xorg-xsetroot | Cursor manager |
 ```
 pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 ```
 
 ## Interface
-| Programs | Alternatives | Description | 
-|-|-|-| 
+| Programs | Alternatives | Description |
+|-|-|-|
 | bspwm sxhdk polybar | qtile | Window manager |
 | rofi | None | Program selectors |
 | lsd | None | Improvement of _ls_ |

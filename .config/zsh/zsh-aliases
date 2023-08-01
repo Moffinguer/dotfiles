@@ -2,8 +2,14 @@
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
 export LESS='-R --use-color -Dd+r$Du+b$'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+export BAT_THEME="Monokai Extended Origin"
+
 alias diff='diff --color=auto'
+alias cat='bat --paging=never'
 alias ip='ip --color=auto'
 alias ls='lsd'
 alias tree='lsd --tree'
@@ -20,6 +26,7 @@ alias rm='rm -i'
 
 # easier to read disk
 alias df='df -h'                          # human-readable sizes
+alias df='duf'
 alias free='free -m'                      # show sizes in MB
 
 # BitTorrent

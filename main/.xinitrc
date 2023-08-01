@@ -43,5 +43,6 @@ picom -f &
 dunst -c ~/.config/dunst/dunstrc &
 udiskie -a -n &
 xbindkeys &
+xsetroot -cursor_name left_ptr &
 
 bspwm
