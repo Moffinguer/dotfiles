@@ -4,20 +4,22 @@ torrents_on_same_file=0
 folder_torrents=""
 default_route="$HOME/Documents/Torrents/"
 
-for line in $( cat $1 )
+while read -r line;
 do
-	$line=$(echo "$line" | awk '{$1=$1};1')
 
 	## Ommit comments
-	if [[ $line == "#"* || -z $string ]]; then
+	if [[ $line == "#"* ]]; then
 		continue
 	fi
 
 	if [[ !$torrents_on_same_file ]]; then
 		## Directly
 		if [[ $line == *' '* ]]; then
-			$link_torrent=$(echo "$string" | awk '{print $2}')
+			$link_torrent=$(echo "$line" | awk '{print $2}')
 			$folder_torrents="$folder_torrents$(echo "$string" | awk '{print $1}')"
+
+			mkdir -p "$folder_torrents"
+
 			qbittorrent-nox --add $link_torrent --savepath $folder_torrents
 
 			echo "File $link_torrent saved on $folder_torrents"
@@ -30,6 +32,7 @@ do
 		elif [[ $line == *{ && !$torrents_on_same_file ]]; then
 			$torrents_on_same_file=1
 			$folder_torrents="$folder_torrents${line%%{*}}"
+			mkdir -p "$folder_torrents"
 			continue
 		fi
 	else
@@ -43,7 +46,7 @@ do
 		elif [[ $line == $'\t'* ]]; then
 			$link_torrent=$(echo "$line" | awk '{print $1}' | tr -d '\t')
 			qbittorrent-nox --add $link_torrent --savepath $folder_torrents
-	
+
 			echo "File $link_torrent saved on $folder_torrents"
 
 			$link_torrent=""
@@ -51,6 +54,6 @@ do
 		fi
 	fi
 
-	echo "File $link_torrent not saved on $folder_torrents"
+	echo "Error on line $line"
 
-done
+done <$1
