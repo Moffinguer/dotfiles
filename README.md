@@ -38,10 +38,10 @@ nmcli connection modify eduroam 802-1x.eap "tls" wifi-sec.key-mgmt "wpa-eap" 802
 | pulseaudio | Sound |
 | xorg-xinit | Script for graphical interface |
 | xorg-xsetroot | Cursor manager |
+| xclip | Clipboard |
 ```
 pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 ```
-
 ## Interface
 | Programs | Alternatives | Description |
 |-|-|-|
@@ -56,6 +56,7 @@ pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 | dunst | None | Notifications |
 | thunar | None | File manager |
 | udiskie | None | Load external devices |
+| kvantum | None | Interface improvement |
 ## Software
 This are programs that I use on a daily basis, like net browsers, terminal emulators, shells, and other programs
 | Programs | Alternatives | Description |
@@ -71,10 +72,16 @@ This are programs that I use on a daily basis, like net browsers, terminal emula
 | unzip | None | Compress/Decompress files |
 | man-db man-pages | None | Manuals |
 | noto-fonts-cjk | None | Special fonts |
+| retroarch | None | Frontend of emulators |
+| gamemode | None | Improve performance on games |
+| bind | None | DNS Tools, administration |
+| wireshark-qt | None | Wireshark |
+| docker | podman | Container manager |
+| gimp | None | image editor |
 ## Program tasks
-I use Cron in order to create tasks that I want to run on certain periods
+I use Cron and at in order to create tasks that I want to run on certain periods
 ```
-sudo pacman -S fcron
+sudo pacman -S fcron at
 ```
 Copy the content of `cron` so the tasks are saved
 

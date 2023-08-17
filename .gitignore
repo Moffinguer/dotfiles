@@ -8,6 +8,10 @@
 .config/nvim/autoload
 !.config/pulse
 .config/pulse/*
+.config/GIMP
+.config/config.rasi
+.config/flameshot
+.config/retroarch
 !.config/pulse/client.conf
 !.config/pulse/daemon.conf
 !.config/pulse/default.pa

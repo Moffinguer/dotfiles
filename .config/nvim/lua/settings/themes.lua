@@ -7,6 +7,9 @@ vim.opt.termguicolors = true
 vim.opt.encoding = "UTF-8"
 vim.opt.foldcolumn = "0"
 
+-- Clipboard
+vim.opt.clipboard = "unnamedplus"
+
 --- Some servers have issues with backup files
 vim.cmd( 'syntax on' )
 vim.opt.backup = false

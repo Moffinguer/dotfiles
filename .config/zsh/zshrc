@@ -22,8 +22,13 @@ zle -N down-line-or-beginning-search
 # Colors
 autoload -Uz colors && colors
 
+# Config route
+if [[ $ZDOTDIR == '' ]] then
+	export ZDOTDIR="$HOME/.config/zsh/"
+fi
+
 # Useful Functions
-source "$ZDOTDIR/zsh-functions"
+source "$HOME/.config/zsh/zsh-functions"
 
 # Normal files to source
 zsh_add_file "zsh-exports"
@@ -34,13 +39,12 @@ zsh_add_file "zsh-prompt"
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_completion "zsh-users/zsh-completions" true
 zsh_add_plugin "hlissner/zsh-autopair"
 
-zsh_add_completion "zsh-users/zsh-completions" true
-
 # Key-bindings
-bindkey "\e^[Od" backward-word
-bindkey "\e^[Oc" forward-word
+bindkey "^[Od" backward-word
+bindkey "^[Oc" forward-word
 bindkey "^[[3~" delete-char
 bindkey "^p" up-line-or-beginning-search # Up
 bindkey "^n" down-line-or-beginning-search # Down

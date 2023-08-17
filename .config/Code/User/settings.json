@@ -8,5 +8,6 @@
     "editor.mouseWheelZoom": true,
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Monokai Pro",
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "editor.stickyScroll.enabled": true
 }

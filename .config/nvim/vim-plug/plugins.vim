@@ -7,7 +7,6 @@ endif
 
 set nocompatible
 call plug#begin('~/.config/nvim/autoload/plugged')
-
 	Plug 'vim-scripts/bad-whitespace'
 	Plug 'vim-scripts/Trailer-Trash'
 	Plug 'jiangmiao/auto-pairs'
@@ -19,6 +18,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 call plug#end()
 
