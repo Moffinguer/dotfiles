@@ -72,6 +72,7 @@ pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 | thunar | None | File manager |
 | udiskie | None | Load external devices |
 | kvantum | None | Interface improvement |
+| xlockmore | None | ScreenSaver |
 
 ### Software
 
