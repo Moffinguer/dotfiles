@@ -1,2 +1,0 @@
-*/30 * * * *     DISPLAY=:0 feh --bg-fill --randomize ~/Pictures/Wallpapers
-0 12 * * *      ~/.local/bin/mirrors.sh
