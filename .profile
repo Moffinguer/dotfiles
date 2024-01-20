@@ -49,4 +49,5 @@ if which man >> /dev/null; then
 	export MANROFFOPT="-c"
 fi
 
+## Scripts
 export PATH="$HOME/.local/bin:$PATH"

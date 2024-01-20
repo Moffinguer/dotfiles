@@ -30,12 +30,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-## Window Manager selection
-wm=${1}
-
-source $HOME/.profile &
+## Export ENV VAR
+source $HOME/.profile
+## Run custom background programs
 sh $HOME/.startup
 
+## Window Manager selection
+wm=${1}
 case $wm in
 	bspwm)
 		exec bspwm

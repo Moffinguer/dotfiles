@@ -2,6 +2,7 @@
 /.config/cef_user_data
 /.local/bin/*
 /.local/share/*
+/.local/state/*
 !/.local/share/fonts/
 /.config/cni
 /.config/dconf
