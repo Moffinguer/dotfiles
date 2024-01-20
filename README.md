@@ -65,6 +65,7 @@ pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 | lsd | None | Improvement of _ls_ |
 | duf | None | Improvement of _df_ |
 | bat | None | Improvement of _cat_ |
+| ugrep | None | Improvement of _grep_ |
 | xbindkeys | None | Shortcut manager |
 | feh | None | Images |
 | picom | None | Compositor |
@@ -91,36 +92,18 @@ terminal emulators, shells, and other programs
 | unzip | None | Compress/Decompress files |
 | man-db man-pages | None | Manuals |
 | noto-fonts-cjk | None | Special fonts |
-| retroarch | None | Frontend of emulators |
-| gamemode | None | Improve performance on games |
 | bind | None | DNS Tools, administration |
 | wireshark-qt | None | Wireshark |
 | docker | podman | Container manager |
 | gimp | None | image editor |
-
-### Program tasks
-
-I use Cron and at in order to create tasks that I want to run on certain periods
-
-``` bash
-sudo pacman -S fcron at
-```
-
-Copy the content of `cron` so the tasks are saved
 
 ### AUR
 
 Right now I only use one package which is not from the oficial repos _visual-studio-code-bin_.
 It will be installed manually
 
-#### Folder struct
-
-- The `git` folder contains the global configuration for git. Move it to *$HOME*
-- The `main` folder contains the generic files and folder that reside on *$HOME*
-- The `.config` contains the local configuration files. Move it to *$HOME*
-- The `.local` contains fonts and custom scripts. Move it to *$HOME*
-
 #### Extra
 
 There might be some packages that might not have been included.
 They will be included over the time.
+
