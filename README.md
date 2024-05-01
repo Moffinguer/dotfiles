@@ -56,52 +56,6 @@ nmcli device wifi connect YOUR_SSID password YOUR_PASSWORD
 pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
 ```
 
-### Interface
-
-| Programs | Alternatives | Description |
-|-|-|-|
-| bspwm sxhdk polybar | qtile | Window manager |
-| rofi | None | Program selectors |
-| lsd | None | Improvement of _ls_ |
-| duf | None | Improvement of _df_ |
-| bat | None | Improvement of _cat_ |
-| ugrep | None | Improvement of _grep_ |
-| xbindkeys | None | Shortcut manager |
-| feh | None | Images |
-| picom | None | Compositor |
-| dunst | None | Notifications |
-| thunar | None | File manager |
-| udiskie | None | Load external devices |
-| kvantum | None | Interface improvement |
-| xlockmore | None | ScreenSaver |
-
-### Software
-
-This are programs that I use on a daily basis, like net browsers,
-terminal emulators, shells, and other programs
-| Programs | Alternatives | Description |
-|-|-|-|
-| firefox-developer-edition | firefox | Browser |
-| vlc | None | Video viewer |
-| discord | None | Communication
-| btop | None | Task manager |
-| rxvt-unicode | None | Terminal emulator |
-| zsh | bash | Shell |
-| xorg-xbacklight | None | Control light of the screen |
-| flameshot | None | Screenshots |
-| unzip | None | Compress/Decompress files |
-| man-db man-pages | None | Manuals |
-| noto-fonts-cjk | None | Special fonts |
-| bind | None | DNS Tools, administration |
-| wireshark-qt | None | Wireshark |
-| docker | podman | Container manager |
-| gimp | None | image editor |
-
-### AUR
-
-Right now I only use one package which is not from the oficial repos _visual-studio-code-bin_.
-It will be installed manually
-
 #### Extra
 
 There might be some packages that might not have been included.
