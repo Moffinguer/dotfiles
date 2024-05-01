@@ -35,7 +35,6 @@ Uses NetworkManager:
 systemctl enable --now networkmanager.service
 nmcli device wifi list
 nmcli device wifi connect YOUR_SSID password YOUR_PASSWORD
-
 ```
 
 ### Programs Minimal Install
@@ -44,20 +43,10 @@ nmcli device wifi connect YOUR_SSID password YOUR_PASSWORD
 |-|-|
 | git | Version control |
 | sudo | Privileges |
-| neovim | Text editor |
+| vi | Text editor |
 | networkmanager | Control network |
-| xorg-server| Launch graphical interface |
-| pulseaudio | Sound |
-| xorg-xinit | Script for graphical interface |
-| xorg-xsetroot | Cursor manager |
-| xclip | Clipboard |
 
 ```bash
-pacman -S git sudo neovim networkmanager xorg-server pulseaudio xorg-xinit
+pacman -S git sudo vi networkmanager xorg-server pulseaudio xorg-xinit
 ```
-
-#### Extra
-
-There might be some packages that might not have been included.
-They will be included over the time.
 
