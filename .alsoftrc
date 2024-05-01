@@ -1,4 +1,0 @@
-drivers=pulse,alsa
-
-[pulse]
-allow-moves=yes
