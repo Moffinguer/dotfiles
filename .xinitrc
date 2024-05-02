@@ -31,9 +31,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 ## Export ENV VAR
-source $HOME/.profile
+source $HOME/.config/shell/.profile
 ## Run custom background programs
-sh $HOME/.startup
+sh $HOME/.config/shell/.startup
 
 ## Window Manager selection
 wm=${1}
