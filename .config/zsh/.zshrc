@@ -28,11 +28,10 @@ autoload -Uz colors && colors
 export ZDOTDIR="$HOME/.config/zsh/"
 
 # Useful Functions
-source "$HOME/.config/zsh/zsh-functions"
+source "$HOME/.config/shell/bfunctions"
 
 # Normal files to source
-#zsh_add_file "zsh-exports"
-zsh_add_file "zsh-aliases"
+source "$HOME/.config/shell/.alias"
 zsh_add_file "zsh-prompt"
 
 # Plugins
