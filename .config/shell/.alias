@@ -41,9 +41,9 @@ which ss >> /dev/null && alias netstat="ss"
 
 # Vim
 if which nvim >> /dev/null; then
-	alias vi="nvim"
-	alias vim="nvim"
-	alias view="nvim -MR"
+	! which vi >> /dev/null && alias vi="nvim"
+	! which vim >> /dev/null && alias vim="nvim"
+	! which view >> /dev/null && alias view="nvim -MR"
 fi
 
 ## python package gestor
