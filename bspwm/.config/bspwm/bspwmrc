@@ -3,6 +3,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
 
+bspc rule -a firefox desktop=^2
+bspc rule -a discord desktop=^3
+bspc rule -a steam desktop=^4
+bspc rule -a code desktop=^1
+
 bspc monitor -d ">_" WWW "[=]" "{..}" "~/" "e^πi"  "⊙)" "@$" "\\/" "-_-"
 
 bspc config border_width         2
