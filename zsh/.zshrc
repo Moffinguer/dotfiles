@@ -24,9 +24,6 @@ zle -N down-line-or-beginning-search
 # Colors
 autoload -Uz colors && colors
 
-# Config route
-export ZDOTDIR="$HOME/.local/share/zsh"
-
 # Useful Functions
 source "$HOME/.config/shell/bfunctions"
 
