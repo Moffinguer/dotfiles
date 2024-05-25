@@ -28,7 +28,6 @@ case "$SHELL" in
 		export HISTFILE="$XDG_DATA_HOME"/zsh/.zhistory
 		export HISTSIZE=1000000
 		export SAVEHIST=1000000
-		export ZDOTDIR=$HOME/.config/zsh
 		;;
 esac
 
